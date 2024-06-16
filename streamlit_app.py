@@ -769,9 +769,9 @@ def estadisticas_visuales(cars_historico):
             #columns_to_drop = [1, 3]  # Columns 'B' and 'D' by index
             modelo = modelo.drop(modelo.columns[columns_to_count_indices], axis=1)
 
-            modelo['Rendimiento %'] = round(modelo['precio_margen_median'] / modelo['Precio'],2)
+            modelo['Rendimiento %'] = round(modelo['precio_margen_median'] / modelo['Precio']*100,2)
 
-            modelo = modelo[['URL', 'Marca_modelo_completo','MarcaModelo_modelo_completo','Año','Precio', 'Rendimiento %' ,'precio_margen_median', 'Kilometraje','KM_median', 'factor_muestra', 'factor_precio', 'factor_km', 'factor_extras', 'nota_final', 'Nombre', 'Teléfono']]
+            modelo = modelo[['URL', 'Marca_modelo_completo','MarcaModelo_modelo_completo','Año','Precio','precio_margen_median', 'Rendimiento %' , 'Kilometraje','KM_median', 'factor_muestra', 'factor_precio', 'factor_km', 'factor_extras', 'nota_final', 'Nombre', 'Teléfono']]
 
             new_column_names = {
                 'URL': 'Página Web',
