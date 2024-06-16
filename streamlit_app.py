@@ -797,6 +797,8 @@ def estadisticas_visuales(cars_historico):
                 },
                 hide_index=True,
             )
+
+            st.wirte("hola")
         
         except:
             st.write("No existen potenciales inversiones")
