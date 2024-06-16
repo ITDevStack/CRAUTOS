@@ -798,7 +798,7 @@ def estadisticas_visuales(cars_historico):
                 hide_index=True,
             )
 
-            st.write("hola")
+            st.write(sum(modelo['Precio']))
         
         except:
             st.write("No existen potenciales inversiones")
