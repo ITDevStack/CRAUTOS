@@ -768,9 +768,9 @@ def estadisticas_visuales(cars_historico):
 
             #columns_to_drop = [1, 3]  # Columns 'B' and 'D' by index
             modelo = modelo.drop(modelo.columns[columns_to_count_indices], axis=1)
-            #modelo = modelo.drop(columns=['Color ext', 'Color int','Puertas','Libre impuestos','Negociable','Recibe','Provincia','Traspaso','Vehiculo_ID','Fecha ingreso','Visualizaciones','MarcaModelo_modelo_completo','Moneda','Marca_modelo_completo',
-            #                                'Extraccion Dia','Grupo de años_modelo_completo','grupo_id','Visuales por Dia','Año_mean','Grupo de años_modelo','Estado','KM_mean','Precio_mean','Precio_std','precio_margen_mean','precio_margen_median','Precio_relativestd',
-            #                                'km_margen_mean','km_margen_median','precio_margen_mean%','precio_margen_median%'])
+
+            modelo['Rendimiento %'] = modelo['precio_margen_median'] / modelo['Precio']
+
             modelo = modelo[['URL', 'Marca_modelo_completo','MarcaModelo_modelo_completo','Año','Precio','precio_margen_median', 'Kilometraje','KM_median', 'factor_muestra', 'factor_precio', 'factor_km', 'factor_extras', 'nota_final', 'Nombre', 'Teléfono']]
 
             new_column_names = {
