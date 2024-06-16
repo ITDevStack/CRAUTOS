@@ -15,6 +15,7 @@ import altair as alt
 import numpy as np
 import locale
 
+st.cache_data.clear()
 st.set_page_config(
   page_title="DevStack CRAutos",
   page_icon="🤑",
