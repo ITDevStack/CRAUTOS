@@ -800,7 +800,7 @@ def estadisticas_visuales(cars_historico):
 
             st.write("Inversion: " +str (sum(modelo['Precio'])))
             st.write("Ganancia: " +str (sum(modelo['Ganancia Esperada'])))
-            st.write("Rendimiento: " +str(sum(modelo['Ganancia Esperada'])/sum(modelo['Precio'])*100))
+            st.write("Rendimiento: " +str(round(sum(modelo['Ganancia Esperada'])/sum(modelo['Precio'])*100,2)))
             
         
         except:
