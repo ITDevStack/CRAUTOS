@@ -479,13 +479,44 @@ def estadisticas_visuales(cars_historico):
             df = filtered_df[filtered_df[column] == value]
         
         col3, col4, col5, col6, col7 , col8, col9 = st.columns(7)
+
+
+
+        try:
         col3.metric("Carros totales", len(df['Marca']))
+        except:
+            st.write("No fue posible obtener la poblacion")
+
+        
+        try:
         col4.metric("Precio min", int(min(df['Precio'])))
+        except:
+            st.write("No fue posible obtener el precio minimo")
+        
+        try:
         col5.metric("Precio promedio", int(df['Precio'].mean()))
+        except:
+            st.write("No fue posible obtener el precio promedio")
+
+        try:
         col6.metric("Precio moda", int(df['Precio'].mode().iloc[0]))
+        except:
+            st.write("No fue posible obtener el precio moda")
+
+        try:
         col7.metric("Mediana precio", int(df['Precio'].median()))
+        except:
+            st.write("No fue posible obtener la mediana del precio")
+
+        try:
         col8.metric("Precio maximo", int(max(df['Precio'])))
+        except:
+            st.write("No fue posible obtener el precio maximo")
+
+        try:
         col9.metric("Desviacion estandar relativa", str(int((df['Precio'].std()/df['Precio'].mean())*100))+"%")
+        except:
+            st.write("No fue posible obtener la dev relativa")
     
         st.markdown('<hr>', unsafe_allow_html=True)
 
