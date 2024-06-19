@@ -473,9 +473,10 @@ def estadisticas_visuales(cars_historico):
            
     with st.expander('Estadisticas'):
 
-        st.write(df)
-        
+    
         df['Precio'] = pd.to_numeric(df['Precio'], errors='coerce').astype('int')
+
+        st.write(df)
         
         for column, value in filters.items():
             df = filtered_df[filtered_df[column] == value]
@@ -489,12 +490,12 @@ def estadisticas_visuales(cars_historico):
 
         
         try:
-            col4.metric("Precio min", int(min(int(df['Precio']))))
+            col4.metric("Precio min", int(min(df['Precio'])))
         except Exception as e:
             st.write("No fue posible obtener el precio minimo")
         
         try:
-            col5.metric("Precio promedio", int(int(df['Precio'].mean())))
+            col5.metric("Precio promedio", int(df['Precio'].mean()))
         except Exception as e:
             st.write("No fue posible obtener el precio promedio")
             st.write(e)
