@@ -473,6 +473,8 @@ def estadisticas_visuales(cars_historico):
            
     with st.expander('Estadisticas'):
 
+        st.write(df)
+        
         df['Precio'] = pd.to_numeric(df['Precio'], errors='coerce').astype('int')
         
         for column, value in filters.items():
