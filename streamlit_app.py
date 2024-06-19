@@ -496,31 +496,31 @@ def estadisticas_visuales(cars_historico):
             col5.metric("Precio promedio", int(df['Precio'].mean()))
         except Exception as e:
             st.write("No fue posible obtener el precio promedio")
-            st.write(e)
+
 
         try:
             col6.metric("Precio moda", int(df['Precio'].mode().iloc[0]))
         except Exception as e:
             st.write("No fue posible obtener el precio moda")
-            st.write(e)
+
 
         try:
             col7.metric("Mediana precio", int(df['Precio'].median()))
         except Exception as e:
             st.write("No fue posible obtener la mediana del precio")
-            st.write(e)
+
 
         try:
             col8.metric("Precio maximo", int(max(df['Precio'])))
         except Exception as e:
             st.write("No fue posible obtener el precio maximo")
-            st.write(e)
+
 
         try:
             col9.metric("Desviacion estandar relativa", str(int((df['Precio'].std()/df['Precio'].mean())*100))+"%")
         except Exception as e:
             st.write("No fue posible obtener la dev relativa")
-            st.write(e)
+
     
         st.markdown('<hr>', unsafe_allow_html=True)
 
