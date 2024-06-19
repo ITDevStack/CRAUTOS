@@ -494,7 +494,7 @@ def estadisticas_visuales(cars_historico):
             st.write("No fue posible obtener el precio minimo")
         
         try:
-            col5.metric("Precio promedio", int(df['Precio'].mean()))
+            col5.metric("Precio promedio", int(int(df['Precio'].mean())))
         except Exception as e:
             st.write("No fue posible obtener el precio promedio")
             st.write(e)
