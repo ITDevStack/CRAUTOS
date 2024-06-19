@@ -18,7 +18,7 @@ import locale
 #st.cache_data.clear()
 st.set_page_config(
   page_title="DevStack CRAutos",
-  page_icon="🤑",
+  page_icon="🚗",
   layout="wide",
 )
 
