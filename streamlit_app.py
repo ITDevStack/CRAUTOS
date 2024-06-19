@@ -477,6 +477,7 @@ def estadisticas_visuales(cars_historico):
         df['Precio'] = pd.to_numeric(df['Precio'], errors='coerce').astype('int')
 
         st.write(df)
+        st.write(len(df))
         
         for column, value in filters.items():
             df = filtered_df[filtered_df[column] == value]
