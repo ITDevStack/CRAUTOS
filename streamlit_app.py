@@ -480,7 +480,7 @@ def estadisticas_visuales(cars_historico):
         st.write(len(df))
         
         for column, value in filters.items():
-            df = filtered_df[filtered_df[column] == value]
+            df = df[df[column] == value]
         
         col3, col4, col5, col6, col7 , col8, col9 = st.columns(7)
 
