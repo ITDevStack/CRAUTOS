@@ -489,7 +489,7 @@ def estadisticas_visuales(cars_historico):
 
         
         try:
-            col4.metric("Precio min", int(min(df['Precio'])))
+            col4.metric("Precio min", int(min(int(df['Precio']))))
         except Exception as e:
             st.write("No fue posible obtener el precio minimo")
         
